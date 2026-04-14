@@ -25,7 +25,7 @@ module.exports = async function handler(req, res) {
   // Envoi notification FCM
   const msg = {
     notification: {
-      title: `Alerte : ${name}`,
+      title: `${name}`,
       body:  `${context} | ${time}`,
     },
     data: { name, context, time, priority: String(priority) },
