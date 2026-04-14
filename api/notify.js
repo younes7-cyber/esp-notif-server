@@ -17,18 +17,16 @@ module.exports = async function handler(req, res) {
     return res.status(400).json({ error: 'Champs manquants' });
 
   // Sauvegarde dans Firestore → frigo/TBNp1Y68mMV9nODEw6Kj/alerts
-  await admin
-    .firestore()
-    .collection('frigo')
-    .doc('TBNp1Y68mMV9nODEw6Kj')
-    .collection('alerts')
-    .add({
-      name,
-      context,
-      time,
-      priority,
-      createdAt: admin.firestore.FieldValue.serverTimestamp(),
-    });
+await admin
+  .firestore()
+  .collection('frigo/TBNp1Y68mMV9nODEw6Kj/alerts') // Chemin direct
+  .add({
+    name,
+    context,
+    time,
+    priority,
+    createdAt: admin.firestore.FieldValue.serverTimestamp(),
+  });
 
   // Envoi notification FCM
   const msg = {
