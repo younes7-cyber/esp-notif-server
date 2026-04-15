@@ -25,6 +25,7 @@ await admin
     context,
     time,
     priority,
+    isRead: false,
     createdAt: admin.firestore.FieldValue.serverTimestamp(),
   });
 
