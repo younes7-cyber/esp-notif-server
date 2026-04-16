@@ -2,6 +2,6 @@
   "name": "esp-notif-server",
   "version": "1.0.0",
   "dependencies": {
-    "firebase-admin": "^12.0.0"
+    "firebase-admin": "^13.0.0"
   }
 }
