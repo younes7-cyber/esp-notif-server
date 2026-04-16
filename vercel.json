@@ -4,5 +4,5 @@
     "api/notify.js": {
       "memory": 128
     }
-  },
+  }
 }
