@@ -2,7 +2,7 @@
   "version": 2,
   "functions": {
     "api/notify.js": {
-      "memory": 128
+      "runtime": "nodejs20.x"
     }
   }
 }
