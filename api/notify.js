@@ -212,7 +212,8 @@ module.exports = async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
 
   if (req.method === 'GET') {
-    const task = req.query.task;
+    const url = new URL(req.url, `https://${req.headers.host}`);
+    const task = url.searchParams.get("task");
     try {
       if (task === 'moveToZone3') {
         await checkAndMoveToZone3();
