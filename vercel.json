@@ -2,7 +2,7 @@
   "version": 2,
   "functions": {
     "api/notify.js": {
-      "memory": 256,
+      "memory": 256
     }
   }
 }
