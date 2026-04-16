@@ -3,13 +3,12 @@
   "functions": {
     "api/notify.js": {
       "memory": 128,
-      "maxDuration": 10
     }
   },
   "crons": [
     {
       "path": "/api/notify?task=all",
-      "schedule": "10 4 * * *"
+      "schedule": "20 4 * * *"
     }
   ]
 }
