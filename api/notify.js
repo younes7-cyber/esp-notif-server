@@ -234,12 +234,26 @@ console.log("TASK:", task);
         await checkPirimiCapacity();
         return res.status(200).json({ success: true, task });
       }
-      if (task === 'all') {
-        await checkAndMoveToZone3();
-        await checkExpiredProducts();
-        await checkPirimiCapacity();
-        return res.status(200).json({ success: true, task: 'all' });
-      }
+if (task === 'all') {
+  try {
+    console.log("➡️ moveZone3");
+    await checkAndMoveToZone3();
+    console.log("✔️ moveZone3 OK");
+
+    console.log("➡️ expired");
+    await checkExpiredProducts();
+    console.log("✔️ expired OK");
+
+    console.log("➡️ pirimi");
+    await checkPirimiCapacity();
+    console.log("✔️ pirimi OK");
+
+    return res.status(200).json({ success: true });
+  } catch (e) {
+    console.error("🔥 ERROR IN ALL TASK:", e);
+    return res.status(500).json({ error: e.message });
+  }
+}
       return res.status(400).json({
         error: 'Tâche inconnue. Utiliser: moveToZone3 | checkExpired | checkPirimi | all',
       });
