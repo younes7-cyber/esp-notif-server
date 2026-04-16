@@ -210,7 +210,14 @@ async function checkPirimiCapacity() {
 // ─── Handler principal ────────────────────────────────────────────────────────
 module.exports = async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
+console.log("🚀 FUNCTION START");
 
+console.log("HEADERS:", req.headers);
+
+const url = new URL(req.url, `https://${req.headers.host}`);
+const task = url.searchParams.get("task");
+
+console.log("TASK:", task);
   if (req.method === 'GET') {
     const url = new URL(req.url, `https://${req.headers.host}`);
     const task = url.searchParams.get("task");
