@@ -5,10 +5,4 @@
       "memory": 128
     }
   },
-  "crons": [
-    {
-      "path": "/api/notify?task=all",
-      "schedule": "22 4 * * *"
-    }
-  ]
 }
