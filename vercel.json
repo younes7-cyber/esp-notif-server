@@ -9,7 +9,7 @@
   "crons": [
     {
       "path": "/api/notify?task=all",
-      "schedule": "0 * * *"
+      "schedule": "10 4 * * *"
     }
   ]
 }
