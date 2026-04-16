@@ -2,13 +2,13 @@
   "version": 2,
   "functions": {
     "api/notify.js": {
-      "memory": 128,
+      "memory": 128
     }
   },
   "crons": [
     {
       "path": "/api/notify?task=all",
-      "schedule": "20 4 * * *"
+      "schedule": "22 4 * * *"
     }
   ]
 }
