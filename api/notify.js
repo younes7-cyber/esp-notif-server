@@ -83,7 +83,7 @@ async function sendFCM({ name, context, time, priority }) {
  * Les timestamps ms valides sont > 1 000 000 000 000 (13 chiffres).
  */
 function getExpiredMs(product) {
-  let ts = product['__expired__'];
+  let ts = product['expired'];
   if (ts == null) return null;
   ts = Number(ts);
   if (isNaN(ts) || ts <= 0) return null;
