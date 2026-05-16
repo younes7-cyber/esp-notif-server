@@ -193,7 +193,7 @@ async function checkPirimiCapacity() {
     (v) => typeof v === 'object' && v !== null
   ).length;
 
-  if (count >= 10) {
+  if (count >= 1) {
     const time = new Date().toISOString();
     const alertData = {
       name:     `Boîte Pirimi pleine`,
