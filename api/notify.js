@@ -161,7 +161,7 @@ async function checkExpiredProducts() {
     if (!snapshot.exists()) continue;
 
     const products = snapshot.val();
-
+    
     for (const [key, product] of Object.entries(products)) {
       if (typeof product !== 'object' || product === null) continue;
 
@@ -210,7 +210,7 @@ async function checkPirimiCapacity() {
 // ─── Handler principal ────────────────────────────────────────────────────────
 module.exports = async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
-console.log("🚀 FUNCTION START");
+console.log(" FUNCTION START");
 
 console.log("HEADERS:", req.headers);
 
@@ -236,21 +236,21 @@ console.log("TASK:", task);
       }
 if (task === 'all') {
   try {
-    console.log("➡️ moveZone3");
+    console.log(" moveZone3");
     await checkAndMoveToZone3();
-    console.log("✔️ moveZone3 OK");
+    console.log(" moveZone3 OK");
 
-    console.log("➡️ expired");
+    console.log(" expired");
     await checkExpiredProducts();
-    console.log("✔️ expired OK");
+    console.log(" expired OK");
 
-    console.log("➡️ pirimi");
+    console.log(" pirimi");
     await checkPirimiCapacity();
-    console.log("✔️ pirimi OK");
+    console.log("pirimi OK");
 
     return res.status(200).json({ success: true });
   } catch (e) {
-    console.error("🔥 ERROR IN ALL TASK:", e);
+    console.error("ERROR IN ALL TASK:", e);
     return res.status(500).json({ error: e.message });
   }
 }
