@@ -193,11 +193,11 @@ async function checkPirimiCapacity() {
     (v) => typeof v === 'object' && v !== null
   ).length;
 
-  if (count >= 1) {
+  if (count >= 3) {
     const time = new Date().toISOString();
     const alertData = {
       name:     `Boîte Pirimi pleine`,
-      context:  `La zone pirimi contient ${count} produit(s) — capacité maximale atteinte (10)`,
+      context:  `La zone pirimi contient ${count} produit(s) — capacité maximale atteinte (3)`,
       time,
       priority: 2,
     };
