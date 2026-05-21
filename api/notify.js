@@ -172,7 +172,7 @@ async function checkExpiredProducts() {
           name:     `Produit expiré détecté`,
           context:  `"${product.name || key}" dans ${zone} est expiré depuis le ${formatDate(expTs)}`,
           time,
-          priority: 3,
+          priority: 1,
         };
 
         await saveAlert(alertData);
